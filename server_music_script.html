@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+<body>
+    <!-- Your website content here -->
+
+    <!-- Add the following script to play modern country music from YouTube -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        // Create an <iframe> element to embed the YouTube video player
+        var player;
+
+        // Function called when the YouTube IFrame API is ready
+        function onYouTubeIframeAPIReady() {
+            // Create a new YouTube player object
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: 'VIDEO_ID', // Replace with the video ID of the modern country music track
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            });
+        }
+
+        // Function called when the YouTube player is ready
+        function onPlayerReady(event) {
+            // Play the YouTube video when the player is ready
+            event.target.playVideo();
+        }
+    </script>
+
+    <!-- Add a hidden <div> element for the YouTube player -->
+    <div id="player"></div>
+</body>
+</html>
