@@ -1,0 +1,11 @@
+@app.route('/submit', methods=['GET', 'POST'])
+@login_required
+def submit():
+    form = JobForm()
+    if form.validate_on_submit():
+        job = Job(title=form.title.data, company=form.company.data, description=form.description.data)
+        db.session.add(job)
+        db.session.commit()
+        flash('Job submitted successfully!', 'success')
+        return redirect(url_for('index'))
+    return render_template('submit.html', form=form)

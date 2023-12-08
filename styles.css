@@ -1,0 +1,27 @@
+/* CSS styles for the job board */
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.job {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.job .title {
+  font-weight: bold;
+}
+
+.job .company {
+  color: #666;
+}
+
+.job .description {
+  margin-top: 5px;
+}
